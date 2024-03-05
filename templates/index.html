@@ -150,7 +150,7 @@
                 <td><input type="number" min="1" max="9" value=""></td>
             </tr>
             <tr>
-                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value="0"></td>
                 <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
@@ -164,7 +164,7 @@
 
         </table>
         <div class="container-fluid text-center mt-4" >
-            <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+            <button type="submit" class="btn btn-primary mx-auto" onclick=submitForm()>Submit</button>
         </div>
 
     </form>
@@ -174,7 +174,7 @@
             const form = document.getElementById('board');
             const formData = new FormData(form);
 
-            fetch('/submit', {
+            fetch('/solve', {
                 method: 'POST',
                 body: formData
             })
