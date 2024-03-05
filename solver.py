@@ -42,13 +42,11 @@ class Sudoku():
     def _get_row(self, row: int) -> list[int]:
         return self.board[row]
 
-    def _num_in_column(self, n: int, col: int) -> bool:
-        column = self._get_column(col)
-        return True if n in column else False
+    def _num_in_column(self, n: int, i: int) -> bool:
+        return self._get_column(i).count(n) > 1
 
-    def _num_in_row(self, n: int, row: int) -> bool:
-        row = self._get_row(row)
-        return True if n in row else False
+    def _num_in_row(self, n: int, i: int) -> bool:
+        return self._get_row(i).count(n) > 1
 
     def _valid_column_solution(self, col: int) -> bool:
         return sum(self._get_column(col)) == 45
