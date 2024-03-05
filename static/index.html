@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Grid</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 0px solid #000;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .sp-r {
+            margin-right: 5px;
+        }
+
+        input[type="number"] {
+            /* Remove up/down arrows for number inputs */
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        /* Remove up/down arrows for WebKit browsers */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <form class="mx-auto" id="board">
+        <table>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" min="1" max="9" value=""></td>
+            </tr>
+
+
+        </table>
+        <div class="container-fluid text-center mt-4" >
+            <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+        </div>
+
+    </form>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('board');
+            const formData = new FormData(form);
+
+            fetch('/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+
+
+</body>
+
+</html>
