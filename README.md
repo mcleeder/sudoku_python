@@ -5,3 +5,4 @@ In-progress
 To-Do:
 - Add a web interface
 - Will need methods for setting initial grid values
+- and translating to/from front-end

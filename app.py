@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from solver import solver
 
 app = Flask(__name__)
 
@@ -16,6 +17,7 @@ def solve():
             return jsonify({'error': 'Invalid Sudoku puzzle format'})
 
         # Solve the Sudoku puzzle
+        solved_puzzle = solver.solve(puzzle_str)
         solved_puzzle = {"puzzle":"solved"}
         
         return jsonify({'solvedPuzzle': solved_puzzle})
