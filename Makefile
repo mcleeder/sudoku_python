@@ -1,4 +1,4 @@
 .PHONY: run
 
 run:
-    python app.py
+    poetry run python app.py
