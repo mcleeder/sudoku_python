@@ -1,6 +1,14 @@
 class Sudoku():
+    def __init__(self, byte_string: bytes | None = None) -> None:
+        if byte_string:
+            self.board = self._decode_form_data(byte_string)
+        else:
+            self.board = [[0 for _ in range(9)] for _ in range(9)]
 
-    board = [[0 for _ in range(9)] for _ in range(9)]
+    def _decode_form_data(self, byte_string: bytes) -> list[list[int]]:
+        values_str = byte_string.decode('utf-8')
+        rows = values_str.strip().split(',')
+        return [list(map(int, rows[i:i+9])) for i in range(0, len(rows), 9)]
 
     def solve(self):
         """
@@ -65,7 +73,7 @@ class Sudoku():
                 num = self.board[y][x]
                 if num == 0:
                     continue
-                if (self._get_column(x).count(num) > 1) or (self._get_row(y) > 1):
+                if (self._get_column(x).count(num) > 1) or (self._get_row(y).count(num) > 1):
                     return False
         return True
     
@@ -74,8 +82,6 @@ class Sudoku():
     
     def print(self):
         print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in self.board]))
-
-solver = Sudoku()
 
 
 

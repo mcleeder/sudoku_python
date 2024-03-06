@@ -59,7 +59,7 @@
 </head>
 
 <body>
-    <form class="mx-auto" id="board">
+    <form class="mx-auto" id="sudokuForm">
         <table>
             <tr>
                 <td><input type="number" min="1" max="9" value=""></td>
@@ -150,7 +150,7 @@
                 <td><input type="number" min="1" max="9" value=""></td>
             </tr>
             <tr>
-                <td><input type="number" min="1" max="9" value="0"></td>
+                <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
@@ -163,31 +163,41 @@
 
 
         </table>
-        <div class="container-fluid text-center mt-4" >
-            <button type="submit" class="btn btn-primary mx-auto" onclick=submitForm()>Submit</button>
+        <div class="container-fluid text-center mt-4">
+            <button type="button" class="btn btn-primary mx-auto" onclick=submitForm()>Submit</button>
         </div>
 
     </form>
 
     <script>
+
+        function prepareData() {
+            const inputElements = document.querySelectorAll('#sudokuForm input');
+            const sudokuArray = [];
+            inputElements.forEach((input) => {
+                sudokuArray.push(parseInt(input.value) || 0);
+            });
+            return sudokuArray
+        }
+
         function submitForm() {
-            const form = document.getElementById('board');
-            const formData = new FormData(form);
+            const formData = prepareData()
 
             fetch('/solve', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
-    </script>
 
+
+    </script>
 
 
 </body>
