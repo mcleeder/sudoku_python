@@ -189,11 +189,23 @@
             })
                 .then(response => response.text())
                 .then(data => {
-                    console.log(data);
+                    updateInputs(JSON.parse(data)["solution"]["puzzle"])
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
+        }
+
+        function updateInputs(array) {
+            const inputs = document.querySelectorAll('#sudokuForm input');
+
+            inputs.forEach((input, index) => {
+                const rowIndex = Math.floor(index / 9);
+                const colIndex = index % 9;
+
+                // Update the input value from the 2D array
+                input.value = array[rowIndex][colIndex] || '';
+            });
         }
 
 

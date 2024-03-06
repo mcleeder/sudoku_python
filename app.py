@@ -14,7 +14,7 @@ def solve():
         puzzle.solve()
         solved_puzzle = {"puzzle": puzzle.board}
         
-        return jsonify({'solvedPuzzle': solved_puzzle})
+        return jsonify({'solution': solved_puzzle})
 
     except Exception as e:
         return jsonify({'error': str(e)})
