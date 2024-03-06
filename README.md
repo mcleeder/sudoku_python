@@ -1,17 +1,17 @@
 ## Recursive Sudoku Solver
 
-In-progress
+Learning project. I was playing with recursion and backtracking. I want to continue exploring and try to use redis/celery to do the solving.
 
-Done:
+### Try It:
+https://sudoku-wispy-pond-6137.fly.dev/
+
+### Done:
 - Can solve sudoku using recursion and backtracking
-- front-end can send data to the back and get a solution returned
+- front-end can send data to the back and get a solution returned & displayed
 - enforcing good inputs with javascript
 
-To-Do:
+### To-Do:
 - Setup celery to help prevent unsolvable boards from looping
     - run solver as celery worker with a timeout
     - redis
-- Error handling
-    - handle errors on front-end
-    - return errors from back-end
-    - display back-end errors
+- Would be neat to feedback which cells board are invalid
