@@ -8,7 +8,7 @@ Done:
 - enforcing good inputs with javascript
 
 To-Do:
-- Setup celery to dead with unsolvable boards
+- Setup celery to help prevent unsolvable boards from looping
     - run solver as celery worker with a timeout
     - redis
 - Error handling
