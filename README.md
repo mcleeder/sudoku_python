@@ -5,9 +5,12 @@ In-progress
 Done:
 - Can solve sudoku using recursion and backtracking
 - front-end can send data to the back and get a solution returned
+- enforcing good inputs with javascript
 
 To-Do:
-- Setup celery to prevent endless back-end loops
+- Setup celery to dead with unsolvable boards
+    - run solver as celery worker with a timeout
+    - redis
 - Error handling
     - handle errors on front-end
     - return errors from back-end

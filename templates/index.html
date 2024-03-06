@@ -62,7 +62,7 @@
     <form class="mx-auto" id="sudokuForm">
         <table>
             <tr>
-                <td><input type="number" min="1" max="9" value=""></td>
+                <td><input type="number" pattern="[1-9]" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
                 <td><input type="number" min="1" max="9" value=""></td>
@@ -165,11 +165,20 @@
         </table>
         <div class="container-fluid text-center mt-4">
             <button type="button" class="btn btn-primary mx-auto" onclick=submitForm()>Submit</button>
+            <button type="button" class="btn btn-warning mx-auto ml-4" onclick=clearInputs()>Clear</button>
         </div>
 
     </form>
 
     <script>
+
+        function clearInputs() {
+            const inputElements = document.querySelectorAll('#sudokuForm input');
+
+            inputElements.forEach((input) => {
+                input.value = "";
+            });
+        }
 
         function prepareData() {
             const inputElements = document.querySelectorAll('#sudokuForm input');
@@ -177,7 +186,7 @@
             inputElements.forEach((input) => {
                 sudokuArray.push(parseInt(input.value) || 0);
             });
-            return sudokuArray
+            return sudokuArray;
         }
 
         function submitForm() {
@@ -208,6 +217,15 @@
             });
         }
 
+        allInputs = document.querySelectorAll('#sudokuForm input')
+
+        allInputs.forEach((input) => {
+            input.addEventListener("input", function (event) {
+                if (!/^[1-9]$/.test(event.target.value)) {
+                    event.target.value = event.target.value.slice(-1)
+                }
+            })
+        })
 
     </script>
 
