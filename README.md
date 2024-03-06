@@ -2,7 +2,10 @@
 
 In-progress
 
+Done:
+- Can solve sudoku using recursion and backtracking
+- front-end can send data to the back and get a solution returned
+
 To-Do:
-- Add a web interface
-- Will need methods for setting initial grid values
-- and translating to/from front-end
+- Setup celery
+- Error handling and checking
