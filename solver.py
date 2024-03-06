@@ -75,6 +75,8 @@ class Sudoku():
                     continue
                 if (self._get_column(x).count(num) > 1) or (self._get_row(y).count(num) > 1):
                     return False
+                if (num < 0) or (num > 9):
+                    return False
         return True
     
     def solved(self):
