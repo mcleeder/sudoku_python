@@ -1,6 +1,11 @@
 ## Recursive Sudoku Solver
 
-Learning project. I was playing with recursion and backtracking. I want to continue exploring and try to use redis/celery to do the solving.
+This was just an exploration project where I was playing with recursion and backtracking. This works fairly well, it can handle an invalid board and should be able to solve anything else. It might be possible to give it a board with no solution though, which might produce an endless loop. I think giving the solving responsibility to a celery worker could make it safer by timing out any attempts that run too long.
+
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+- Python as the API doing the solving
+- JavaScript on the front-end doing the sending and displaying
+- [Deployed on Fly.dev](https://sudoku-wispy-pond-6137.fly.dev/)
 
 ### Try It:
 https://sudoku-wispy-pond-6137.fly.dev/
