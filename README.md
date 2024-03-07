@@ -10,7 +10,8 @@ This was just an exploration project where I was playing with recursion and back
 ### Try It:
 https://sudoku-wispy-pond-6137.fly.dev/
 
-![Screenshot 2024-02-25 000009](https://github.com/mcleeder/sudoku_python/assets/68357049/3d81c5ac-a862-4697-8b79-2db222294fd2)
+![Sudoku-Grid---Google-Chrome-2024-03-06-22-24-57](https://github.com/mcleeder/sudoku_python/assets/68357049/3fe86207-63fa-4356-8a2b-c8ab8a16a6da)
+
 
 
 ### Done:
